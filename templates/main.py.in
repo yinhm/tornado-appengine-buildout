@@ -1,0 +1,16 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+#
+# Copyright 2011 ${buildout:author}
+import environment
+from google.appengine.ext.webapp.util import run_wsgi_app
+
+import ${buildout:appname}
+
+def main():
+    
+    run_wsgi_app(${buildout:appname}.application)
+
+
+if __name__ == "__main__":
+    main()

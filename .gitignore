@@ -1,0 +1,11 @@
+.installed.cfg
+bin
+parts
+develop-eggs
+eggs
+downloads
+lib
+build
+dist
+.mr.developer.cfg
+var

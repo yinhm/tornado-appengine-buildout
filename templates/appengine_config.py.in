@@ -1,0 +1,7 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+#
+# Copyright 2011 ${buildout:author}
+
+def webapp_add_wsgi_middleware(app):
+    return app
