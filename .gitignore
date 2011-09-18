@@ -9,3 +9,6 @@ build
 dist
 .mr.developer.cfg
 var
+.pyc
+css/.sass-cache
+css/stylesheets/*
