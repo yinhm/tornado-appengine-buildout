@@ -2,15 +2,13 @@
 # -*- coding: utf-8 -*-
 #
 # Copyright 2011 ${buildout:author}
-import environment
-from google.appengine.ext.webapp.util import run_wsgi_app
+import os
+import sys
 
-import ${buildout:appname}
+PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 
-def main():
-    
-    run_wsgi_app(${buildout:appname}.application)
+if 'vendor' not in sys.path:
+    sys.path[0:0] = [os.path.join(PROJECT_DIR, '${buildout:pkg_path}'),
+                     os.path.join(PROJECT_DIR, '${buildout:pkg_path}.zip')]
 
-
-if __name__ == "__main__":
-    main()
+from ${buildout:appname} import application

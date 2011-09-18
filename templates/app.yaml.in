@@ -2,6 +2,7 @@ application: ${buildout:appspotname}
 version: ${buildout:appspotversion}
 runtime: ${buildout:appspotruntime}
 api_version: 1
+threadsafe: yes
 
 handlers:
 - url: /static/
@@ -11,12 +12,8 @@ handlers:
   static_files: static/\1
   upload: static/(.*)
 
-- url: /remote_api
-  script: $PYTHON_LIB/google/appengine/ext/remote_api/handler.py
-  login: admin
-
 - url: /.*
-  script: main.py
+  script: main.application
 
 builtins:
 - datastore_admin: on
